@@ -7,6 +7,7 @@
 
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
+#include "Weapons/WeaponBase.h"
 
 // Sets default values
 ARCCharacterBase::ARCCharacterBase()
@@ -145,5 +146,37 @@ void ARCCharacterBase::StartSprint()
 void ARCCharacterBase::StopSprint()
 {
 	GetCharacterMovement()->MaxWalkSpeed = DefaultWalkSpeed;
+}
+
+AWeaponBase* ARCCharacterBase::GetEquippedWeapon()
+{
+	return EquippedWeapon;
+}
+
+AWeaponBase* ARCCharacterBase::EquipWeapon(TSubclassOf<AWeaponBase> NewWeapon)
+{
+	if(EquippedWeapon)
+	{
+		UnEquipWeapon();
+	}
+
+	FActorSpawnParameters Params;
+	Params.Owner = this;
+	Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+
+	EquippedWeapon = GetWorld()->SpawnActor<AWeaponBase>(NewWeapon, Params);
+
+	EquippedWeapon->AttachToComponent(MeshFP, FAttachmentTransformRules::SnapToTargetIncludingScale,AttachSocket);
+
+	return EquippedWeapon;
+}
+
+void ARCCharacterBase::UnEquipWeapon()
+{
+	if(EquippedWeapon)
+	{
+		EquippedWeapon->OnUnEquipped();
+		EquippedWeapon->Destroy();
+	}
 }
 

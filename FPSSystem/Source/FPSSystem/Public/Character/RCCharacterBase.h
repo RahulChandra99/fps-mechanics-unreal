@@ -7,17 +7,23 @@
 #include "RCCharacterBase.generated.h"
 
 class UCameraComponent;
+class AWeaponBase;
 
 UCLASS()
 class FPSSYSTEM_API ARCCharacterBase : public ACharacter
 {
 	GENERATED_BODY()
 
+private:
+	float DefaultWalkSpeed;
+	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,Category="RC Character",meta=(AllowPrivateAccess = true))
 	UCameraComponent* CameraComponent;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly,Category="RC Character",meta=(AllowPrivateAccess = true))
 	USkeletalMeshComponent* MeshFP;
+
+	AWeaponBase* EquippedWeapon;
 
 public:
 	// Sets default values for this character's properties
@@ -26,6 +32,17 @@ public:
 	UCameraComponent* GetCameraComponenet() { return CameraComponent;}
 
 	USkeletalMeshComponent* GetMeshFP(){return MeshFP;}
+	
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="RC Character")
+	float BaseTurnRate = 45.0f;
+    
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="RC Character")
+	float BaseLookAtRate = 45.0f;
+    
+	float MaxSprintSpeed = 10000.0f;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category="Weapons")
+	FName AttachSocket;
 
 protected:
 	// Called when the game starts or when spawned
@@ -38,14 +55,7 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="RC Character")
-	float BaseTurnRate = 45.0f;
-
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="RC Character")
-	float BaseLookAtRate = 45.0f;
-
-	float MaxSprintSpeed = 10000.0f;
-
+	
 	void MoveForward(float Value);
 	void MoveRight(float Value);
 	void MoveUp(float Value);
@@ -61,8 +71,14 @@ public:
 	void StartSprint();
 	void StopSprint();
 
-private:
-	float DefaultWalkSpeed;
+	
+	UFUNCTION(BlueprintPure, Category = "Weapons")
+	AWeaponBase* GetEquippedWeapon();
+	
+	UFUNCTION(BlueprintCallable, Category = "Weapons")
+	AWeaponBase* EquipWeapon(TSubclassOf<AWeaponBase> NewWeapon);
 
-
+	UFUNCTION(BlueprintCallable, Category = "Weapons")
+	void UnEquipWeapon();
+	
 };
