@@ -37,15 +37,16 @@ void AWeaponBase::Tick(float DeltaTime)
 
 }
 
-void AWeaponBase::StartFiring_Implementation()
+FTransform AWeaponBase::GetCustomTransform()
 {
-	if(!BulletClass)
-	{
-		return;
-	}
+	return CustomTransform;
+}
 
+void AWeaponBase::FireRound()
+{
 	if(RemainingAmmo > 0.0)
 	{
+		RemainingAmmo--;
 		AActor* BulletOwner = GetOwner() ? GetOwner() : this;
 		
 		const FTransform SpawnTransform = MuzzlePoint->GetComponentTransform();
@@ -56,16 +57,36 @@ void AWeaponBase::StartFiring_Implementation()
 		
 		
 		GetWorld()->SpawnActor<AActor>(BulletClass, SpawnTransform, Params);
+
+		OnFiredRound();
+	}
+	
+}
+
+
+void AWeaponBase::StartFiring_Implementation()
+{
+	if(!BulletClass)
+	{
+		return;
+	}
+
+	if(bFullyAutomatic)
+	{
+		GetWorldTimerManager().SetTimer(ReFireHandle, this, &AWeaponBase::FireRound, ReFireRate, true);
+		FireRound();
 	}
 	else
 	{
-		//No ammo
+		FireRound();
 	}
+	
+	
 }
 
 void AWeaponBase::StopFiring_Implementation()
 {
-	
+	GetWorldTimerManager().ClearTimer(ReFireHandle);
 }
 
 

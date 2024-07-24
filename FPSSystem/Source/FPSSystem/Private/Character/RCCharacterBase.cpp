@@ -69,6 +69,8 @@ void ARCCharacterBase::SetupPlayerInputComponent(UInputComponent* PlayerInputCom
 	PlayerInputComponent->BindAction(TEXT("Jump"),IE_Released, this, &ARCCharacterBase::StopJump);
 	PlayerInputComponent->BindAction(TEXT("Sprint"),IE_Pressed, this, &ARCCharacterBase::StartSprint);
 	PlayerInputComponent->BindAction(TEXT("Sprint"),IE_Released, this, &ARCCharacterBase::StopSprint);
+	PlayerInputComponent->BindAction(TEXT("Shoot"),IE_Pressed, this, &ARCCharacterBase::StartShoot);
+	PlayerInputComponent->BindAction(TEXT("Shoot"),IE_Released, this, &ARCCharacterBase::StopShoot);
 
 }
 
@@ -132,10 +134,18 @@ void ARCCharacterBase::StopJump()
 
 void ARCCharacterBase::StartShoot()
 {
+	if(EquippedWeapon)
+	{
+		EquippedWeapon->StartFiring();
+	}
 }
 
 void ARCCharacterBase::StopShoot()
 {
+	if(EquippedWeapon)
+	{
+		EquippedWeapon->StopFiring();
+	}
 }
 
 void ARCCharacterBase::StartSprint()
@@ -166,7 +176,21 @@ AWeaponBase* ARCCharacterBase::EquipWeapon(TSubclassOf<AWeaponBase> NewWeapon)
 
 	EquippedWeapon = GetWorld()->SpawnActor<AWeaponBase>(NewWeapon, Params);
 
-	EquippedWeapon->AttachToComponent(MeshFP, FAttachmentTransformRules::SnapToTargetIncludingScale,AttachSocket);
+	/*EquippedWeapon->AttachToComponent(MeshFP, FAttachmentTransformRules::SnapToTargetIncludingScale,AttachSocket);*/
+	 // Set custom transform
+        if (EquippedWeapon)
+        {
+            // Define your custom transform here
+            EquippedWeapon->GetCustomTransform().SetLocation(FVector(0.0f, 0.0f, 0.0f)); // Replace with your custom location
+            EquippedWeapon->GetCustomTransform().SetRotation(FQuat(FRotator(0.0f, 0.0f, 0.0f))); // Replace with your custom rotation
+            EquippedWeapon->GetCustomTransform().SetScale3D(FVector(1.0f, 1.0f, 1.0f)); // Replace with your custom scale
+    
+            // Set the weapon's transform
+            EquippedWeapon->SetActorTransform(EquippedWeapon->GetCustomTransform());
+            
+            // Attach the weapon to the character
+            EquippedWeapon->AttachToComponent(MeshFP, FAttachmentTransformRules::KeepRelativeTransform, AttachSocket);
+        }
 
 	return EquippedWeapon;
 }

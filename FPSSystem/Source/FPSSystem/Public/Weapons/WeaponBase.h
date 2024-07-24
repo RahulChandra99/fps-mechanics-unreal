@@ -14,11 +14,14 @@ UCLASS()
 class FPSSYSTEM_API AWeaponBase : public AActor
 {
 	GENERATED_BODY()
+private:
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Weapons",meta=(AllowPrivateAccess = true))
+	FTimerHandle ReFireHandle;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Weapon",meta=(AllowPrivateAccess = true))
 	USceneComponent* RootComp;
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Weapons",meta=(AllowPrivateAccess = true))
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Weapon",meta=(AllowPrivateAccess = true))
 	UArrowComponent* MuzzlePoint;
 
 	
@@ -37,6 +40,9 @@ public:
 	
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Weapon")
 	bool bFullyAutomatic = false;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Weapon")
+	FTransform CustomTransform;
 	
 protected:
 	// Called when the game starts or when spawned
@@ -46,16 +52,24 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	UFUNCTION(BlueprintNativeEvent, Category="Weapons")
+	UFUNCTION(BlueprintNativeEvent, Category="Weapon")
 	void StartFiring();
 	
-	UFUNCTION(BlueprintNativeEvent, Category="Weapons")
+	UFUNCTION(BlueprintNativeEvent, Category="Weapon")
 	void StopFiring();
 
-	UFUNCTION(BlueprintImplementableEvent, Category="Weapons")
+	UFUNCTION(BlueprintImplementableEvent, Category="Weapon")
 	void OnEquipped();
 
-	UFUNCTION(BlueprintImplementableEvent, Category="Weapons")
+	UFUNCTION(BlueprintImplementableEvent, Category="Weapon")
 	void OnUnEquipped();
 
+	UFUNCTION(BlueprintImplementableEvent, Category="Weapon")
+	void OnFiredRound();
+
+	UFUNCTION()
+	FTransform GetCustomTransform();
+
+private:
+	void FireRound();
 };
