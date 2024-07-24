@@ -12,6 +12,9 @@ class FPSSYSTEM_API UMyActorComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
+private:
+	
+	
 public:	
 	// Sets default values for this component's properties
 	UMyActorComponent();
