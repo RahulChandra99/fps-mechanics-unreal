@@ -4,16 +4,16 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
-#include "CharacterBase.generated.h"
+#include "RCCharacterBase.generated.h"
 
 UCLASS()
-class FPSSYSTEM_API ACharacterBase : public ACharacter
+class FPS_MECHANICS_API ARCCharacterBase : public ACharacter
 {
 	GENERATED_BODY()
 
 public:
 	// Sets default values for this character's properties
-	ACharacterBase();
+	ARCCharacterBase();
 
 protected:
 	// Called when the game starts or when spawned

@@ -3,13 +3,13 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class FPSSystemTarget : TargetRules
+public class FPS_MechanicsEditorTarget : TargetRules
 {
-	public FPSSystemTarget( TargetInfo Target) : base(Target)
+	public FPS_MechanicsEditorTarget( TargetInfo Target) : base(Target)
 	{
-		Type = TargetType.Game;
+		Type = TargetType.Editor;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_1;
-		ExtraModuleNames.Add("FPSSystem");
+		ExtraModuleNames.Add("FPS_Mechanics");
 	}
 }
