@@ -2,12 +2,12 @@
 	"Targets": [
 		{
 			"Name": "SurvivalFPS",
-			"Path": "D:\\GameDevelopment\\UnrealEngine\\Projects\\FPS\\SurvivalFPS\\Source\\SurvivalFPS.Target.cs",
+			"Path": "D:\\GameDevelopment\\UnrealEngine\\Projects\\FPS\\fps-mechanics-unreal\\SurvivalFPS\\Source\\SurvivalFPS.Target.cs",
 			"Type": "Game"
 		},
 		{
 			"Name": "SurvivalFPSEditor",
-			"Path": "D:\\GameDevelopment\\UnrealEngine\\Projects\\FPS\\SurvivalFPS\\Source\\SurvivalFPSEditor.Target.cs",
+			"Path": "D:\\GameDevelopment\\UnrealEngine\\Projects\\FPS\\fps-mechanics-unreal\\SurvivalFPS\\Source\\SurvivalFPSEditor.Target.cs",
 			"Type": "Editor"
 		}
 	]
