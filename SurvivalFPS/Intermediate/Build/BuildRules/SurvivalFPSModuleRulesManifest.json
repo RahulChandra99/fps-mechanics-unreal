@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"D:\\GameDevelopment\\UnrealEngine\\Projects\\FPS\\SurvivalFPS\\Source\\SurvivalFPS\\SurvivalFPS.Build.cs",
+		"D:\\GameDevelopment\\UnrealEngine\\Projects\\FPS\\SurvivalFPS\\Source\\SurvivalFPS.Target.cs",
+		"D:\\GameDevelopment\\UnrealEngine\\Projects\\FPS\\SurvivalFPS\\Source\\SurvivalFPSEditor.Target.cs"
+	],
+	"EngineVersion": "5.2.1"
+}

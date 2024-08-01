@@ -1,0 +1,13 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamedevelopment\\unrealengine\\projects\\fps\\survivalfps\\intermediate\\build\\win64\\unrealeditor\\inc\\survivalfps\\uht\\survivalfps.init.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamedevelopment\\unrealengine\\projects\\fps\\survivalfps\\intermediate\\build\\win64\\x64\\survivalfpseditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "d:\\gamedevelopment\\unrealengine\\projects\\fps\\survivalfps\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\survivalfps\\definitions.survivalfps.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

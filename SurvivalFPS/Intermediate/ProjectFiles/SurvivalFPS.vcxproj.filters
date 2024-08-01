@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\SurvivalFPS.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{F31BBDD1-B3E8-3BCC-9652-680E16935819}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SurvivalFPS.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\SurvivalFPSEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEditorPerProjectUserSettings.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultInput.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\SurvivalFPS">
+      <UniqueIdentifier>{2C76B615-E7C3-3892-9EE8-4CE587F7648F}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\SurvivalFPS\SurvivalFPS.Build.cs">
+      <Filter>Source\SurvivalFPS</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\SurvivalFPS\SurvivalFPS.cpp">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalFPS\SurvivalFPS.h">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalFPS\SurvivalFPSCharacter.cpp">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalFPS\SurvivalFPSCharacter.h">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalFPS\SurvivalFPSGameMode.cpp">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalFPS\SurvivalFPSGameMode.h">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalFPS\SurvivalFPSProjectile.cpp">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalFPS\SurvivalFPSProjectile.h">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalFPS\TP_PickUpComponent.cpp">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalFPS\TP_PickUpComponent.h">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\SurvivalFPS\TP_WeaponComponent.cpp">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\SurvivalFPS\TP_WeaponComponent.h">
+      <Filter>Source\SurvivalFPS</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,19 @@
+{
+    "Version": "1.2",
+    "Data": {
+        "Source": "d:\\gamedevelopment\\unrealengine\\projects\\fps\\survivalfps\\intermediate\\build\\win64\\unrealeditor\\inc\\survivalfps\\uht\\survivalfpsgamemode.gen.cpp",
+        "ProvidedModule": "",
+        "PCH": "d:\\gamedevelopment\\unrealengine\\projects\\fps\\survivalfps\\intermediate\\build\\win64\\x64\\survivalfpseditor\\development\\engine\\sharedpch.engine.shadowerrors.inclorderunreal5_1.h.pch",
+        "Includes": [
+            "d:\\gamedevelopment\\unrealengine\\projects\\fps\\survivalfps\\intermediate\\build\\win64\\x64\\unrealeditor\\development\\survivalfps\\definitions.survivalfps.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\fps\\survivalfps\\source\\survivalfps\\survivalfpsgamemode.h",
+            "d:\\ue 5\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\gameframework\\gamemodebase.h",
+            "d:\\ue 5\\ue_5.2\\engine\\source\\runtime\\engine\\classes\\engine\\serverstatreplicator.h",
+            "d:\\ue 5\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\serverstatreplicator.generated.h",
+            "d:\\ue 5\\ue_5.2\\engine\\intermediate\\build\\win64\\unrealeditor\\inc\\engine\\uht\\gamemodebase.generated.h",
+            "d:\\gamedevelopment\\unrealengine\\projects\\fps\\survivalfps\\intermediate\\build\\win64\\unrealeditor\\inc\\survivalfps\\uht\\survivalfpsgamemode.generated.h"
+        ],
+        "ImportedModules": [],
+        "ImportedHeaderUnits": []
+    }
+}

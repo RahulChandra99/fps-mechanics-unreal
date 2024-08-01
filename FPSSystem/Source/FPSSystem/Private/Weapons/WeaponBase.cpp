@@ -47,7 +47,7 @@ void AWeaponBase::FireRound()
 	if(RemainingAmmo > 0.0)
 	{
 		RemainingAmmo--;
-		AActor* BulletOwner = GetOwner() ? GetOwner() : this;
+		AActor* BulletOwner = this;
 		
 		const FTransform SpawnTransform = MuzzlePoint->GetComponentTransform();
 		
